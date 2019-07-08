@@ -1,4 +1,7 @@
 { 
-  "directory_name": "pset",
-  "file_name": "pset01"
+    "project_name": "pset01",
+    "file_name": "pset01",
+    "institute_name": "Brown University",
+    "header": "DATA 1010 Problem Set 1",
+    "due_date": "8 July 2019"
 }

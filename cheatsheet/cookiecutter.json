@@ -1,0 +1,6 @@
+{ 
+    "project_name": "cheatsheet",
+    "file_name": "{{ cookiecutter.project_name }}",
+    "cheatsheet_title": "Title of the cheatsheet",
+    "author_name": "Your name"
+}
