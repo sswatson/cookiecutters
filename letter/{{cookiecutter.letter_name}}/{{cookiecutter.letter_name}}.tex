@@ -1,0 +1,45 @@
+{% set subjective = {"M": "he",  "F": "she"} %}
+{% set objective  = {"M": "him", "F": "her"} %}
+{% set possessive = {"M": "his", "F": "her"} %}
+{% set body = {"student_status" : 
+    """
+    This letter is to confirm that {name} is a current student at the Brown University in the Data Science master's program, with an expected graduation date of December 2019.
+    """.format(name=cookiecutter.student_name),
+
+    "program_completion" : 
+    """
+    \\newcommand{{{{completiondate}}}}{{{{11th of August}}}} 
+    I confirm that as of the date of this letter, {{name}} is in good academic standing and is on track to complete the Brown University Master of Science in Data Science program requirements by the \\completiondate.
+    She is registered in {{poss}} final course, DATA 2050, in Summer 2020. {{Poss}} work for this course will be completed by the \\completiondate, and we will be able to enter {{poss}} grade by that date.
+    """.format(name = cookiecutter.student_name,
+               poss = possessive[cookiecutter.student_gender],
+               Poss = possessive[cookiecutter.student_gender].capitalize()),
+
+    "blank" : ""
+    }
+%}
+\documentclass[11pt]{brownletter}
+
+\usepackage{palatino}
+
+\date{\today}
+
+\begin{document}
+\begin{letter}{Samuel S. Watson \\
+               Brown University \\
+               164 Angell Street \\
+               Providence, RI 02912}
+
+\opening{To Whom It May Concern:}
+
+{{ body[cookiecutter.letter_type] }}
+
+\closing{Sincerely, \\
+\includegraphics[width=2cm]{signature.pdf} \\
+Samuel S.\ Watson \\
+Director of Graduate Studies \\
+Data Science Initiative \\
+Brown University}
+
+\end{letter}
+\end{document}

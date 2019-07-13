@@ -1,0 +1,6 @@
+{
+    "letter_name" : "my-letter-name",
+    "letter_type" : ["student_status","program_completion","blank"],
+    "student_name" : "Jane Doe",
+    "student_gender" : ["M","F"]
+}
